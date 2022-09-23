@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog De Notas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+    <div class="min-h-screen">
+        
+        <div class="bg-gray-700 py-3 text-white ">
+            <nav class="flex items-center px-2">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10 mr-2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
+                  </svg>
+                  
+                <div>
+                    <h1 class="text-2xl font-black">Blog de notas</h1>
+                </div>
+            </nav>
+        </div>
+
+        
+        <div class="md:grid md:grid-cols-3">
+            
+            <div class="md:col-span-2 p-4 altura overflow-hidden bg-white order-first md:order-last" id="columna-2">
+                <div class="flex items-center justify-between pb-4 border-b border-gray-200">
+                    
+                    <span id="fecha-hoy" class="font-bold text-gray-700 text-xl"></span>
+    
+                    <div class="gap-2 flex items-center">
+                        <button id="btnResetear" class="cursor-pointer">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-red-500">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 9.75L14.25 12m0 0l2.25 2.25M14.25 12l2.25-2.25M14.25 12L12 14.25m-2.58 4.92l-6.375-6.375a1.125 1.125 0 010-1.59L9.42 4.83c.211-.211.498-.33.796-.33H19.5a2.25 2.25 0 012.25 2.25v10.5a2.25 2.25 0 01-2.25 2.25h-9.284c-.298 0-.585-.119-.796-.33z" />
+                            </svg>
+                        </button>
+    
+                        <button id="abrir-pantalla">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-gray-700">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75h-4.5m4.5 0v4.5m0-4.5L15 9m5.25 11.25h-4.5m4.5 0v-4.5m0 4.5L15 15" />
+                            </svg> 
+                        </button>
+    
+                        <button id="cerrar-pantalla" class="hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-gray-700">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 9V4.5M9 9H4.5M9 9L3.75 3.75M9 15v4.5M9 15H4.5M9 15l-5.25 5.25M15 9h4.5M15 9V4.5M15 9l5.25-5.25M15 15h4.5M15 15v4.5m0-4.5l5.25 5.25" />
+                              </svg>                              
+                        </button>
+                    </div>
+                      
+                </div>
+    
+                <form id="formulario" class="mt-6 relative">
+                    <input type="hidden" id="idEntrada">
+    
+                    <textarea name="entrada" id="entrada" rows="15" class="altura-entrada w-full p-2 rounded outline-blue" placeholder="Escribe algo..."></textarea>
+                    <div id="mensaje-error"></div>
+    
+                    <button type="submit" class="btn-flotante p-4 rounded-full bg-gray-800">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-white">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L6.832 19.82a4.5 4.5 0 01-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 011.13-1.897L16.863 4.487zm0 0L19.5 7.125" />
+                          </svg>  
+                    </button>
+    
+                </form>
+            </div>
+
+
+            <div id="columna-1" class="altura md:col-span-1 border-r border-gray-400 overflow-y-scroll md:order-first order-last border-t border-gray-500 md:boder-t-0 md:border-none">                
+                <p class="text-xl font-bold text-gray-700 py-5 px-2 text-center uppercase">Mis Entradas</p>
+                <div id="contenedor-entrada"></div>
+            </div>
+
+
+
+        </div>
+
+    </div>
+    <script src="./js/01.js"></script>
+</body>
+</html>
